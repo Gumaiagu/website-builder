@@ -1,6 +1,6 @@
 # Web Site Builder
 
-This is a simple project that looks like Linktree, but in Django, that's not complete like it, but I at least understood about color and image fields.
+This is a simple project that looks like Linktree, but in Django, that's not complete like it, but at least Iunderstood about color and image fields.
 
 ## Executing
 
