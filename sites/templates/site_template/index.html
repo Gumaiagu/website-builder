@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ icon }}">
+    <title>{{ name }}</title>
+
+    <style>
+        * {
+            color: {{ text_color }};
+            background-color: {{ background_color }};
+        }
+
+        #icon {
+            border: 1px solid {{ text_color }};
+        }
+
+        img {
+            fill: {{ text_color }};
+        }
+
+        .buttons {
+            border: 1px solid {{ text_color }};
+            background-color: {{ background_color }};
+        };
+    </style>
+
+    <style>
+        * {
+            text-align: center;
+        }
+
+        #icon {
+            margin-top: 1vw;
+            width: 9vmax;
+            height: 10vw;
+
+            border-radius: 50%;
+        }
+
+        #title {
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: -3px;
+        }
+
+        #description {
+            font-size: 20px;
+            font-family: fantasy;
+            margin-bottom: 25px;
+        }
+
+        #links-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #all_links {
+            width: 217px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .links {
+            width: 40px;
+        }
+
+        .links:hover {
+            width: 45px;
+            margin: 0 -2.5px -5px -2.5px;
+        }
+
+        #buttons-containers {
+            margin-top: 50px;
+        }
+
+        .buttons {
+            border-radius: 10px;
+
+            width: 100%;
+            height: 50px;
+            font-size: 27px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .buttons:hover {
+            cursor: pointer;
+        };
+    </style>
+</head>
+<body>
+    <div>
+        <img id="icon" src="{{ icon }}" alt="{{ description }}">
+        <h1 id="title">{{ name }}</h1>
+    </div>
+    <div id="content">
+        <p id="description">{{ description }}</p>
+
+        <div id="links-container">
+            <div id="all_links">
+                {% if x %}
+                    <a href="{{ x }}" target="_blank">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="links" role="img">
+                            <path fill="currentColor" fill-rule="evenodd" d="m20.9 3-.8-.7-6.5 7.4-5.1-7.2H3L10.6 13l-7.1 8 .7.7 7-7.9 5.6 7.7H22l-8-11L21 3ZM5 3.5l12.2 17h2.9L7.9 3.5H5.1Z"></path>
+                        </svg>
+                    </a>
+                {% endif %}
+
+                {% if instagram %}
+                    <a href="{{ instagram }}" target="_blank">
+                        <svg class="links" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                            <path fill="currentColor" d="M21.94 7.71a7.33 7.33 0 0 0-.46-2.4 4.62 4.62 0 0 0-1.1-1.69 4.61 4.61 0 0 0-1.7-1.1 7.32 7.32 0 0 0-2.4-.45C15.19 2 14.83 2 12 2s-3.19.01-4.29.06a7.33 7.33 0 0 0-2.4.46 4.62 4.62 0 0 0-1.69 1.1 4.61 4.61 0 0 0-1.1 1.7 7.32 7.32 0 0 0-.46 2.39C2.01 8.81 2 9.18 2 12s.01 3.19.06 4.29a7.33 7.33 0 0 0 .46 2.4 4.62 4.62 0 0 0 1.1 1.69 4.61 4.61 0 0 0 1.7 1.1 7.32 7.32 0 0 0 2.4.45c1.1.05 1.46.07 4.28.07s3.19-.02 4.3-.07a7.33 7.33 0 0 0 2.38-.45 4.9 4.9 0 0 0 2.8-2.8 7.32 7.32 0 0 0 .46-2.4c.05-1.1.06-1.47.06-4.29s-.01-3.18-.06-4.28Zm-1 8.53a6.35 6.35 0 0 1-.39 2.08 3.9 3.9 0 0 1-2.23 2.23 6.36 6.36 0 0 1-2.08.39c-1.08.05-1.44.06-4.24.06s-3.16-.01-4.24-.06a6.35 6.35 0 0 1-2.08-.39 3.63 3.63 0 0 1-1.35-.88 3.63 3.63 0 0 1-.88-1.35 6.36 6.36 0 0 1-.39-2.08C3.01 15.16 3 14.8 3 12s.01-3.16.06-4.24a6.35 6.35 0 0 1 .39-2.08 3.63 3.63 0 0 1 .88-1.35 3.63 3.63 0 0 1 1.35-.88 6.36 6.36 0 0 1 2.08-.39C8.84 3.01 9.2 3 12 3s3.16.01 4.24.06a6.35 6.35 0 0 1 2.08.39 3.63 3.63 0 0 1 1.35.88 3.63 3.63 0 0 1 .88 1.35 6.36 6.36 0 0 1 .39 2.08C20.99 8.84 21 9.2 21 12s-.01 3.16-.06 4.24Z"></path>
+                            <path fill="currentColor" d="M17.58 5.47a.95.95 0 1 0 .95.95.95.95 0 0 0-.95-.95ZM12 7.07A4.93 4.93 0 1 0 16.93 12 4.93 4.93 0 0 0 12 7.07Zm0 8.86A3.93 3.93 0 1 1 15.93 12 3.93 3.93 0 0 1 12 15.93Z" style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
+                        </svg>
+                    </a>
+                {% endif %}
+
+                {% if facebook %}
+                    <a href="{{ facebook }}" target="_blank">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="links" role="img">
+                            <path fill="currentColor" d="M23,12A11,11,0,1,0,10.279,22.865h0a11.08,11.08,0,0,0,3.436,0h0A10.952,10.952,0,0,0,23,12ZM10.859,21.935v-6.9a.5.5,0,0,0-.5-.5H8.193V12.5h2.166a.5.5,0,0,0,.5-.5V9.686c0-2.278,1.264-3.585,3.459-3.585a15.392,15.392,0,0,1,1.858.137V7.89h-.824l-.019,0a2,2,0,0,0-2.181,1.735,1.8,1.8,0,0,0-.011.4V12a.5.5,0,0,0,.5.5H15.97l-.312,2.035H13.641a.5.5,0,0,0-.5.5v6.9A10.124,10.124,0,0,1,10.859,21.935Zm3.282-.166V15.535h1.946a.5.5,0,0,0,.5-.425l.465-3.035a.5.5,0,0,0-.494-.575H14.141V10.016a1.267,1.267,0,0,1,.308-.821,1.218,1.218,0,0,1,.9-.3h1.324a.5.5,0,0,0,.5-.5V5.806a.5.5,0,0,0-.42-.494A16.661,16.661,0,0,0,14.325,5.1c-2.754,0-4.466,1.757-4.466,4.585V11.5H7.693a.5.5,0,0,0-.5.5v3.035a.5.5,0,0,0,.5.5H9.859v6.234a10,10,0,1,1,4.282,0Z"></path>
+                        </svg>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="buttons-containers">
+            {% for link in links %}
+                <button class="buttons" onclick="window.location.href = '{{ link.url }}'">{{ link.nome }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
